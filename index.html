@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>reveal.js - The HTML Presentation Framework</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <!-- #1 -->
+                <section>
+                    <h1>#PyCon6</h1>
+                    <h3>Florence, April 2015</h3>
+                    <p>This is a bunch of notes I've scribbled while attending the conference.</p>
+                    <p>I've then spent a bit of time to reorganize them according to a simple classification:</p>
+                    <ul>
+                        <li>Awesome</li>
+                        <li>Cool</li>
+                        <li>Meh*</li>
+                    </ul>
+                    <p><small>* hope authors don't take it too personally</small></p>
+                </section>
+
+                <!-- #2 -->
+                <section>
+                    <section>
+                        <h1>Awesome</h1>
+                    </section>
+
+                    <section>
+                        <h3><a href="https://www.pycon.it/conference/talks/asynchronous-web-development-with-python-3">Async web dev with py3</a>, <a href="http://www.caceres.me/">A. Caceres</a></h3>
+                        <p><small>Day 1 h11.15am</small></p>
+
+                        <p><a href="https://www.skoobe.de/">Skoobe</a> is Spotify for books and uses tornado in production</p>
+                        <p>Use "yield from" in python 3.3 to create callbacks and use them in async Web server</p>
+                        <code class="python">result = yield from my_slowfunc()</code>
+                    </section>
+
+                    <section>
+                        <h3>Graph databases intro, <a href="https://twitter.com/fcofdezc">f. fernandez</a></h3>
+                        <p><small>Day 2 h5.45pm</small></p>
+
+                        <p>Starts quoting euler and 7 the bridges of Koenigsberg</p>
+                        <p>complexity of ER querying for "friends of friends" at depth m is O(m log n) while on graph db it’s O(m)</p>
+                        <p>Neo4j provides <a href="#/5/1">ACID</a> REST interface and declarative language called Cypher</p>
+                        <p>"reduce" is provided as a cypher function so it can e.g. evaluate shortest path between nodes</p>
+                        <p>recommendation system in 3 lines: <small>nodes: [users, films, directors]. arcs: "ratings". add node "genre" and arc "belonging" for finer classification. RUN: query all films seen by connected users that have similar ratings. </small></p>
+                    </section>
+
+                    <section data-background="http://sservi.nasa.gov/wp-content/uploads/drupal/606437main_simmars_full.jpg">
+                        <h3>v-eras Mars mission simulation</h3>
+                        <p><small>Day 3 h11.45am</small></p>
+
+                        <p>The Italian Mars society, quite cool and unassuming</p>
+                        <p>models and simulation of a colonization infrastructure on Mars using threadmill and oculus rift, including labs, rovers and hangouts through webcam across modules</p>
+                        <p>Everything released open source: <a href="http://erasproject.org/">erasproject.org</a></p>
+                    </section>
+                </section>
+
+                <!-- #3 -->
+                <section>
+                    <section>
+                        <h1>Cool</h1>
+                    </section>
+
+                    <section>
+                        <h3>modern python patterns and idioms, <a href="http://www.aleax.it">alex martelli</a></h3>
+                        <p><small>Day 1 h10am</small></p>
+
+                        <p>googler (bad start with an italian only talk), kind of old school dev</p>
+                        <p>mentions <a href="gilliam.github.io">Gilliam</a>, framework for micro rest services (maybe useful for responsive.TV)</p>
+                        <p>pulls out some x86 asm and cryptic python, kind of cool, he's way better prepared than he looks</p>
+
+                    </section>
+
+                    <section>
+                        <h3>building a SNA dashboard, <a href="https://github.com/luca">luca mearelli</a></h3>
+                        <p><small>Day 1 h5pm</small></p>
+                        <p><a href="https://github.com/Wikitalia/edgesense">Edgesense</a> is a social network analysis tool</p>
+                        <p>shows degree of connectivity and network analysis, in/out degrees and in-betweenness
+                        (super interesting for krawkon)</p>
+                        <p>uses d3.js to display some graph, <a href="http://sigmajs.org/">sigma.js</a> to display big network topologies</p>
+                        <p>supports <a href="http://gexf.net/format/">GEXF (Graph Exchange XML Format)</a>, a language for describing complex networks</p>
+                    </section>
+
+                    <section>
+                        <h3>data science models on a budget, <a href="http://twitter.com/springcoil">peader coyle</a></h3>
+                        <p><small>Day 1  h6pm</small></p>
+                        <p>chit chat about how to become a valuable data scientist </p>
+                        <p>"data product": bring math models to real world</p>
+                        <p><a href="https://yhathq.com/">yhatHQ</a>: interesting to provide a predictive model (or any other statistical / machine learning algorithm) as a service</p>
+                        <p>basically you do the maths, then export the numbers of the predictive model through their api</p>
+                        <p>alternatives: <a href="http://www.dominodatalab.com/">domino</a>, <a href="https://sense.io/">sense.io</a>, ipython widgets</p>
+                    </section>
+
+                    <section>
+                        <h3>staying on top of server security, justin mayer</h3>
+                        <p><small>Day 2 h12.15pm</small></p>
+
+                        <p>install <a href="https://help.ubuntu.com/community/AutomaticSecurityUpdates">unattended-upgrades</a> and enable them! </p>
+                        <p>try <a href="http://click.pocoo.org/">Click</a> a Python package for creating command line interfaces in a composable way, developed by same Armin Ronacher (Flask)</p>
+                        <p>On docker running unattended-upgrades is not an option, we need to rely on upstream linked images that provide upgrades and restart the container when ready to deploy</p>
+                    </section>
+
+                    <section>
+                        <h3>managing docker with python, cuzzoli + fanelli</h3>
+                        <p><small>Day 2 h3pm</small></p>
+                        <p>very high level overview of docker features</p>
+                        <p>ops management: try <a href="http://saltstack.com/">saltsack</a> and <a href="http://www.ansible.com/home">ansible</a></p>
+                        <p>docker py gives hints to programatically manage docker, live demo</p>
+                        <p>interacts with containers using std in/err/out streams to read/write commands and infos</p>
+                        <p>they actually don’t use it in production, but ok for dev for the time being</p>
+                    </section>
+
+                    <section>
+                        <h3>python in the videogame industry, roberto de ioris</h3>
+                        <p><small>Day 3  h10am</small></p>
+                        <blockquote>videogame development IS rocket science, john carmack</blockquote>
+                        <p>favs unity 5, based on mono. works at <a href="http://www.aiv01.it">AIV</a></p>
+                        <p>alternatives: cryengine (c++, lua), unreal engine (c++, boo, js-like)</p>
+                        <p>open source: blender game engine (c++, py), panda3d (c++, py), ogre, cocos2d</p>
+                        <p>maya, blender, <a href="http://www.makehuman.org/">makehuman</a> are all python scriptable</p>
+                        <p>py libs available: pygame, pyglet, panda3d, blender <small>but unity/udk are light years ahead</small></p>
+                        <p>everyone complains of <a href="#/5/2">GIL</a>! but multithread is progressively disappearing in gaming</p>
+                    </section>
+                </section>
+
+                <!-- #4 -->
+                <section>
+                    <section>
+                        <h1>Meh</h1>
+                    </section>
+
+                    <section>
+                        <h3>py3 for data science, valerio maggio</h3>
+                        <p><small>Day 1 h12</small></p>
+                        <p>trying quite hard to evangelize about how 2to3 can be easily done and the new code will be 10x faster using matrix multiplication (but without showing any benchmark) and extensive use of generators</p>
+                    </section>
+
+                    <section>
+                        <h3>gradual typing in python - <a href="http://dialelo.github.io/">a. gomez</a></h3>
+                        <p><small>Day 2 h11.15am</small></p>
+                        <p>quite interestingly, his company is behind <a href="https://taiga.io/">taiga.io</a> project management suite</p>
+                        <p>straight to the point, differences between static and dynamic typing</p>
+                        <p>gradual typing approach is to add annotations so that a piece of sw can be partially type checked</p>
+                        <p>follows a (painful) <a href="http://dialelo.github.io/talks/gradual-typing-in-python/">list of features</a> from the py3 “typing” library</p>
+
+                    </section>
+
+                    <section>
+                        <h3>test driven deployment with ipython and nosetests, <a href="http://www.par-tec.it">roberto polli</a></h3>
+                        <p><small>Day 2 h3.45pm</small></p>
+                        <blockquote>nosestest is easier because each and every function is a test and don’t need to write oop</blockquote>
+
+                    </section>
+
+                    <section>
+                        <h3>building successful api overnight, <a href="https://twitter.com/orliesaurus">orlando kalossakas</a></h3>
+                        <p><small>Day 2 h5.15pm</small></p>
+                        <p>some useful links to create api docs: <a href="http://raml.org/">raml</a>, <a href="https://apiblueprint.org/">apiblueprint</a>, <a href="http://swagger.io/">swagger</a></p>
+                    </section>
+
+                </section>
+
+                <!-- #5 -->
+                <section>
+                    <section>
+                        <p>you've reached the end, you deserve a little reward</p>
+                        <iframe src="https://scratch.mit.edu/projects/23345966/#fullscreen" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="600" height="400" allowfullscreen></iframe>
+                        <p><small><a href="https://twitter.com/siloraptor">Roberto Rosario</a> was also at #pycon6 but I couldn't manage to see his talk</small></p>
+                    </section>
+                </section>
+
+                <!-- #6 -->
+                <section>
+                    <section>
+                        <h3>Glossary</h3>
+                    </section>
+                    <section>
+                        <h3>ACID</h3>
+                        <ul>
+                            <li>atomicity: If any part of a transaction fails, the database state is left unchanged.</li>
+                            <li>consistency: Any transaction will leave the database in a consistent state.</li>
+                            <li>isolation: During a transaction, modified data cannot be accessed by other operations.</li>
+                            <li>durability: The DBMS can always recover the results of a committed transaction.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>GIL</h3>
+                        <p>The <a href="https://wiki.python.org/moin/GlobalInterpreterLock">global interpreter lock</a>, or GIL, is a mutex that prevents multiple native threads from executing Python bytecodes at once</p>
+                    </section>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
