@@ -1,4 +1,4 @@
 ## Pycon6 Notes
 
-these are visible at http://grudelsud.github.io/pycon6-notes/
+you can read these slides [here](http://wip.londondroids.com/pycon6-notes/)
 
